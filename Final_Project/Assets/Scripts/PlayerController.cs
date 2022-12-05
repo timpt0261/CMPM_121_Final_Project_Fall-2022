@@ -11,12 +11,12 @@ public class PlayerController : MonoBehaviour
     private float movementX;
     private float movementY;
     private float rotationX;
-    private float rotationY;
+    //private float rotationY;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        //Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void OnMove(InputValue movementValue) {
@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
     private void OnLook(InputValue lookValue) {
         Vector2 lookVector = lookValue.Get<Vector2>();
         rotationX = lookVector.x;
-        rotationY = lookVector.y;
+        //rotationY = lookVector.y;
     }
 
     private void OnFire(InputValue fireValue) {
@@ -38,5 +38,9 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate() {
         Vector3 movement = new Vector3(movementX, -movementY, 0);
         rb.AddRelativeForce(movement * speed);
+
+        Vector3 rotation = new Vector3(0, 0, rotationX);
+        Quaternion deltaRotation = Quaternion.Euler(rotation * 10.0f * Time.fixedDeltaTime);
+        rb.MoveRotation(rb.rotation * deltaRotation);
     }
 }
