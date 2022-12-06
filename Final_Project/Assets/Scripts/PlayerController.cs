@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    public Transform gravityTarget;
+    public float gravity = 9.81f;
     public float speed = 10;
     private Rigidbody rb;
 
@@ -35,9 +37,17 @@ public class PlayerController : MonoBehaviour
         Debug.Log(fireValue.Get<float>());
     }
 
+    private void ProcessGravity() {
+        Vector3 diff = transform.position - gravityTarget.position;
+        rb.AddForce(-diff.normalized * gravity * (rb.mass));
+        Debug.DrawRay(transform.position, diff.normalized, Color.red);
+    }
+
     private void FixedUpdate() {
         Vector3 movement = new Vector3(movementX, -movementY, 0);
         rb.AddRelativeForce(movement * speed);
+
+        ProcessGravity();
 
         Vector3 rotation = new Vector3(0, 0, rotationX);
         Quaternion deltaRotation = Quaternion.Euler(rotation * 10.0f * Time.fixedDeltaTime);
