@@ -317,13 +317,13 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\rchav\Dropbox\PC\Documents\Fall_2022_UCSC\CMPM 121(Game
     Technologies)\CMPM_121_Final_Project_Fall-2022\Final_Project
@@ -480,6 +480,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 73
+
     width: 356
     height: 540
   m_ViewDataDictionary: {fileID: 0}
