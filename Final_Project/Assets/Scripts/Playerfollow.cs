@@ -11,8 +11,6 @@ public class Playerfollow : MonoBehaviour
     }
     void Update()
     {
-        
-          agent.destination = Playerpos.position;    
-        
+          agent.destination = Playerpos.position;
     }
 }
