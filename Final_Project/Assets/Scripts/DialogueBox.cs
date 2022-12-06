@@ -6,12 +6,14 @@ using TMPro;
 public class DialogueBox : MonoBehaviour
 {
     public TextMeshProUGUI textCompnent;
+    public BoxCollider boxCollider;
     public string[] lines;
     public float textSpeed;
     private int index;
     // Start is called before the first frame update
     void Start()
     {
+        boxCollider = GetComponent<BoxCollider>();
         textCompnent.text = string.Empty;
         StartDialouge();
     }
@@ -28,6 +30,7 @@ public class DialogueBox : MonoBehaviour
             else
             {
                 StopAllCoroutines();
+                Debug.Log(textCompnent.text);
                 textCompnent.text = lines[index];
             }
         }
