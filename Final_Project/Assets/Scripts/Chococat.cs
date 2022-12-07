@@ -15,7 +15,6 @@ public class Chococat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
         player = GetComponent<Transform>();
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         cupcake = GameObject.Find("Cupcake");        

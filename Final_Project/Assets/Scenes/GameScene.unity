@@ -6719,7 +6719,6 @@ GameObject:
   - component: {fileID: 7750344748831030782}
   - component: {fileID: 7750344748831030784}
   - component: {fileID: 7750344748831030781}
-  - component: {fileID: 7750344748831030779}
   m_Layer: 0
   m_Name: Chococat
   m_TagString: Enemy
