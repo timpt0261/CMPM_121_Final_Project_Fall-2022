@@ -13,6 +13,7 @@ public class DialogueBox : MonoBehaviour
     void Start()
     {
         textCompnent.text = string.Empty;
+        textCompnent.enabled = true;
         StartDialouge();
     }
 
@@ -28,7 +29,8 @@ public class DialogueBox : MonoBehaviour
             else
             {
                 StopAllCoroutines();
-                textCompnent.text = lines[index];
+                //textCompnent.text = lines[index];
+                textCompnent.enabled = false;
             }
         }
        
@@ -58,6 +60,7 @@ public class DialogueBox : MonoBehaviour
             index++;
             textCompnent.text = string.Empty;
             StartCoroutine(TypeLine());
+            textCompnent.text = string.Empty;
         }
         else
         {

@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
+
     }
 
     private void OnMove(InputValue movementValue) {
@@ -55,8 +56,10 @@ public class PlayerController : MonoBehaviour
     }
 
     private void FixedUpdate() {
+        rb.constraints = RigidbodyConstraints.FreezeRotation;
         Vector3 movement = new Vector3(movementX, -movementY, 0);
         rb.AddRelativeForce(movement * speed);
+        
 
         Vector3 rotation = new Vector3(0, 0, rotationX);
         Quaternion deltaRotation = Quaternion.Euler(rotation * 10.0f * Time.fixedDeltaTime);
