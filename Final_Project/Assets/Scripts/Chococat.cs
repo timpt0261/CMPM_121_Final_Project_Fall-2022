@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class Chococat : MonoBehaviour
 {
@@ -32,7 +33,7 @@ public class Chococat : MonoBehaviour
     {
         if (col.gameObject.name == "Hello Kitty")
         {
-            Debug.Log ("tag!!!!!!");
+            SceneManager.LoadScene("GameScene");
         }
     }
 }

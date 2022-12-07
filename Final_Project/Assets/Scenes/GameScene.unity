@@ -559,14 +559,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1091458676}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -1.51, z: 1.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1223956428743213688}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1147084255
 GameObject:
   m_ObjectHideFlags: 0
@@ -3005,8 +3005,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 200
-  shotSpeed: 5
-  cupcake: {fileID: 4988712565429680944, guid: 172939801c0f57749864f5843a73c0cc, type: 3}
+  shotSpeed: 20
+  cupcakeLifetime: 3
+  cooldown: 5
+  cupcakeObject: {fileID: 4988712565429680944, guid: 172939801c0f57749864f5843a73c0cc, type: 3}
   spawnPoint: {fileID: 1091458677}
 --- !u!54 &1957585922338016353
 Rigidbody:
@@ -3065,7 +3067,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.5, y: 4, z: 1.49}
+  m_Size: {x: 3.5, y: 3.5, z: 1.5}
   m_Center: {x: -0.048985243, y: -0.1586226, z: 0.6}
 --- !u!4 &1981214203133562564
 Transform:

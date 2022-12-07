@@ -13,10 +13,12 @@ public class PlayerController : MonoBehaviour
     private float rotationX;
 
     [Space]
-    public float shotSpeed = 5;
-    public float cupcakeLifetime = 5;
+    public float shotSpeed = 10;
+    public float cupcakeLifetime = 2;
+    public float cooldown = 5;
     public GameObject cupcakeObject;
     public Transform spawnPoint;
+    private bool shotFired = false;
 
     
 
@@ -38,12 +40,18 @@ public class PlayerController : MonoBehaviour
     }
 
     private void OnFire(InputValue fireValue) {
-        if (GameObject.FindGameObjectsWithTag("Cupcake").Length == 0) {
+        if (!shotFired) {
+            shotFired = true;
             GameObject cupcakeProjectile = Instantiate(cupcakeObject, spawnPoint.position, spawnPoint.rotation);
             cupcakeProjectile.GetComponent<Rigidbody>().velocity = spawnPoint.transform.up * shotSpeed * -1;
             Destroy(cupcakeProjectile, cupcakeLifetime);
+            Invoke("EndCooldown", cooldown + cupcakeLifetime);
 
         }
+    }
+
+    private void EndCooldown() {
+        shotFired = false;
     }
 
     private void FixedUpdate() {
