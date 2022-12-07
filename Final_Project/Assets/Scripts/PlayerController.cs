@@ -11,7 +11,16 @@ public class PlayerController : MonoBehaviour
     private float movementX;
     private float movementY;
     private float rotationX;
-    //private float rotationY;
+
+    [Space]
+    public float shotSpeed = 10;
+    public float cupcakeLifetime = 2;
+    public float cooldown = 5;
+    public GameObject cupcakeObject;
+    public Transform spawnPoint;
+    private bool shotFired = false;
+
+    
 
     void Start()
     {
@@ -29,11 +38,21 @@ public class PlayerController : MonoBehaviour
     private void OnLook(InputValue lookValue) {
         Vector2 lookVector = lookValue.Get<Vector2>();
         rotationX = lookVector.x;
-        //rotationY = lookVector.y;
     }
 
     private void OnFire(InputValue fireValue) {
-        Debug.Log(fireValue.Get<float>());
+        if (!shotFired) {
+            shotFired = true;
+            GameObject cupcakeProjectile = Instantiate(cupcakeObject, spawnPoint.position, spawnPoint.rotation);
+            cupcakeProjectile.GetComponent<Rigidbody>().velocity = spawnPoint.transform.up * shotSpeed * -1;
+            Destroy(cupcakeProjectile, cupcakeLifetime);
+            Invoke("EndCooldown", cooldown + cupcakeLifetime);
+
+        }
+    }
+
+    private void EndCooldown() {
+        shotFired = false;
     }
 
     private void FixedUpdate() {
