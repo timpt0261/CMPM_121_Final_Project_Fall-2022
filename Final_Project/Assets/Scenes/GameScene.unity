@@ -6597,7 +6597,6 @@ GameObject:
   - component: {fileID: 7750344748831030784}
   - component: {fileID: 7750344748831030781}
   - component: {fileID: 7750344748831030779}
-  - component: {fileID: 7750344748831030783}
   m_Layer: 0
   m_Name: Chococat
   m_TagString: Enemy
@@ -6653,19 +6652,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.4926107, y: 2.0046182, z: 2.973562}
   m_Center: {x: 0.068077445, y: -0.14812148, z: 1.6767809}
---- !u!114 &7750344748831030783
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7750344748831030778}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 196ce7da659a57d4297547999e200808, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemy: {fileID: 1957585922338016351}
 --- !u!54 &7750344748831030784
 Rigidbody:
   m_ObjectHideFlags: 0
