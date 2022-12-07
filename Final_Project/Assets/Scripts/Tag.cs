@@ -51,7 +51,7 @@ public class Tag : MonoBehaviour
                 dialoguebox.SetActive(true);
                 tagged = !tagged;
                 StartCoroutine(TypeLine(tagged ? lines[0] : lines[1]));
-               
+                Stop();
             }
         }
 
@@ -60,6 +60,7 @@ public class Tag : MonoBehaviour
 
     IEnumerator TypeLine(string input)
     {
+        textCompnent.text = string.Empty;
         foreach (char c in input.ToCharArray())
         {
             textCompnent.text += c;
@@ -68,6 +69,12 @@ public class Tag : MonoBehaviour
         }
         textCompnent.enabled = false;
         dialoguebox.SetActive(false);
+    }
+
+    private IEnumerator Stop()
+    {
+        yield return new WaitForSeconds(2);
+        StopAllCoroutines();
     }
 
 
