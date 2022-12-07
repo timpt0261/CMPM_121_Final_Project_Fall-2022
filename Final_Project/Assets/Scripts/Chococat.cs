@@ -25,7 +25,7 @@ public class Chococat : MonoBehaviour
     {
         if (!tagged) ChasePlayer();
         Debug.Log(Vector3.Distance(agent.transform.position, player.transform.position));
-        if (Vector3.Distance(agent.transform.position, player.transform.position) < 10)
+        if (Vector3.Distance(agent.transform.position, player.transform.position) < 15)
         {
             tagged = false;
         }
