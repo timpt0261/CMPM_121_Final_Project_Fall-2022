@@ -12,12 +12,15 @@ public class Chococat : MonoBehaviour
     public float stunTime = 3;
     public bool tagged = true;
     public bool stunned = false;
+    Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
         player = GetComponent<Transform>();
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        cupcake = GameObject.Find("Cupcake");        
+        cupcake = GameObject.Find("Cupcake");
+        rb.constraints = RigidbodyConstraints.FreezeRotation;
     }
 
     // Update is called once per frame

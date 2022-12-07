@@ -60,6 +60,7 @@ public class PlayerController : MonoBehaviour
         Vector3 movement = new Vector3(movementX, -movementY, 0);
         rb.AddRelativeForce(movement * speed);
         
+        
 
         Vector3 rotation = new Vector3(0, 0, rotationX);
         Quaternion deltaRotation = Quaternion.Euler(rotation * 10.0f * Time.fixedDeltaTime);
