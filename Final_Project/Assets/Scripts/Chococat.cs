@@ -16,10 +16,11 @@ public class Chococat : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        player = GetComponent<Transform>();
     }
 
     // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
         if (!tagged) ChasePlayer();
     }
