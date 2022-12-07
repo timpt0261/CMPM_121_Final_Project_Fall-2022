@@ -9,6 +9,7 @@ public class Chococat : MonoBehaviour
     UnityEngine.AI.NavMeshAgent agent;
     public Transform player;
     private GameObject cupcake;
+    public ParticleSystem hearts;
     public float stunTime = 3;
     public bool tagged = true;
     public bool stunned = false;
@@ -16,7 +17,8 @@ public class Chococat : MonoBehaviour
     void Start()
     {
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        cupcake = GameObject.Find("Cupcake");        
+        cupcake = GameObject.Find("Cupcake");
+        hearts.Stop();
     }
 
     // Update is called once per frame
@@ -39,6 +41,7 @@ public class Chococat : MonoBehaviour
     {
         if (col.gameObject.name == "Cupcake(Clone)") {
             Destroy(col.gameObject, 0);
+            hearts.Play();
             cupcake.transform.localScale = new Vector3(0.35f, 0.35f, 0.35f);
             stunned = true;
             Invoke("EndStun", stunTime);
@@ -50,6 +53,7 @@ public class Chococat : MonoBehaviour
     }
 
     private void EndStun() {
+        hearts.Stop();
         cupcake.transform.localScale = new Vector3(0, 0, 0);
         stunned = false;
     }
