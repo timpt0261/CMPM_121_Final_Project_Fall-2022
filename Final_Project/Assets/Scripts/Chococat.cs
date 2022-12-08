@@ -17,7 +17,7 @@ public class Chococat : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        player = GetComponent<Transform>();
+        //player = GetComponent<Transform>();
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         cupcake = GameObject.Find("Cupcake");
         rb.constraints = RigidbodyConstraints.FreezeRotation;
@@ -58,3 +58,4 @@ public class Chococat : MonoBehaviour
         stunned = false;
     }
 }
+
