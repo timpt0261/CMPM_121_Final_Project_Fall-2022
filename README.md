@@ -1,5 +1,11 @@
 # CMPM 121 - Final Project - NPC Chase Scene
 
+## Build file
+Located at `./Final_Project/Build/Final_Project.exe`
+
+## Link to demonstration video
+https://drive.google.com/file/d/1OYG1K_cfBpQxjmMuhQQ9JAJLClJd1R4U/view?usp=share_link
+
 ## Basic controls
 - WASD to move around
 - Mouse to look around (only on horizontal axis)
